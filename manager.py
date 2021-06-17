@@ -2,6 +2,7 @@ import discord, asyncio, os, json, sys, re, datetime, time
 from discord.ext import commands
 from random import *
 from urllib import parse
+from urllib.request import urlopen
 
 token = "Nzg0MjcwNTk2MTQ5MzQ2MzA0.X8m26Q.VIRuyE8qnJElI0sWg36wojnsFaM"
 #token = "NzgzNjkyODU5MzM2ODE4NzA4.X8ec2Q.vSz2BlHSgL_x8biAVXvr7qXZPiM"
