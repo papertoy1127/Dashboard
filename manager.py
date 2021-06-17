@@ -1,10 +1,11 @@
 import discord, asyncio, os, json, sys, re, datetime, time
+import urllib3
 from discord.ext import commands
 from random import *
 from urllib import parse
 from urllib.request import urlopen
 
-token = "Nzg0MjcwNTk2MTQ5MzQ2MzA0.X8m26Q.VIRuyE8qnJElI0sWg36wojnsFaM"
+token = "NzgzNjkyODU5MzM2ODE4NzA4.X8ec2Q.Dm0gJ9vulvYt_qQMXrbggbjldnA"
 #token = "NzgzNjkyODU5MzM2ODE4NzA4.X8ec2Q.vSz2BlHSgL_x8biAVXvr7qXZPiM"
 bot = commands.Bot(command_prefix='?!', help_command=None)
 
@@ -24,6 +25,11 @@ async def on_ready():
     list_name = ['?!help / ?!patch', '?!invite to invite the bot!', f'Working on {ch} servers', 'm!help (music bot commend)']
     await bt(list_name)
 
+data: urllib3.HTTPResponse = urlopen("https://raw.githubusercontent.com/papertoy1127/Dashboard/master/data.json")
+
+print(data.read())
+
+exit()
 
 def save_data():
     open('data.json', mode='w', encoding='utf-8').write(json.dumps(messages))
